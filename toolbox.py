@@ -506,7 +506,7 @@ def on_report_generated(cookies, files, chatbot):
     return cookies, report_files, chatbot
 
 def is_openai_api_key(key):
-    API_MATCH_ORIGINAL = re.match(r"sk-[a-zA-Z0-9]{48}$", key)
+    API_MATCH_ORIGINAL = re.match(r"[a-zA-Z0-9_]{34}$", key) #r"sk-[a-zA-Z0-9]{48}$"
     API_MATCH_AZURE = re.match(r"[a-zA-Z0-9]{32}$", key)
     return bool(API_MATCH_ORIGINAL) or bool(API_MATCH_AZURE)
 
